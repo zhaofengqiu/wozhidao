@@ -112,7 +112,7 @@ def process(user,sum):
                 break
     user.loginout()
 if __name__ == '__main__':
-    multiprocessing.freeze_support()
+    multiprocessing.freeze_support()#这里这句是多进程用pyinstaller打包成apk时候必须加上的
     usermessages=getAlluser()
     usernum=usermessages[0]
     usermessage=usermessages[1]
