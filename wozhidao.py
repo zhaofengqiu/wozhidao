@@ -57,12 +57,12 @@ class User():
             self.loginget=r.json()
             self.nickName=self.loginget['data']['nickName']
             self.baseParams=self.loginget['data']['token']
-            print(self.nickName+'登录成功')
 
+            getRecodes(self.nickName,self.baseParams)
             return True
         except:
-            print(str(self.user)+'密码或者账号错误')
-            return False
+           print(str(self.user)+'密码或者账号错误')
+           return False
     def loginout(self):
 
         http.client._http_vsn = 10
@@ -88,6 +88,12 @@ def getAlluser():
     usermessages=[rows,usermessage]
     return usermessages
 
+def getRecodes(nickName,baseParams):
+    processheaders['baseParams']=baseParams
+
+    jsondata=requests.get('http://kp.appwzd.cn/kepu/user/getScore',headers=processheaders).json()
+    print("%s 登录成功，其积分为 %s"%(nickName,jsondata['data']['score']))
+
 def getNews(sort,page):
     Newurl='http://kp.appwzd.cn/kepu/news/getNews/%d/%d'%(sort,page)
     news=requests.get(Newurl,headers=processheaders).json()
@@ -104,21 +110,22 @@ def process(user,sum):
         for new in news:
             newId=new['newsId']
             getNewdetail(newId,user)
-            time.sleep(random.uniform(1,2))
+            time.sleep(random.uniform(0.60,0.7))
             sum=sum-1
             message= '\ruser {0:{2}^10} also have {1:} now.'.format(user.nickName, sum,chr(12288))
             print(message,end='')
             if sum<=0 :
                 break
     user.loginout()
+
 if __name__ == '__main__':
     multiprocessing.freeze_support()#这里这句是多进程用pyinstaller打包成apk时候必须加上的
     usermessages=getAlluser()
     usernum=usermessages[0]
     usermessage=usermessages[1]
     sum=int(input('How many time do you want:'))
-    users=[]
-    userPs=[]
+    users=[]# 337018.25
+    userPs=[]#337101.25
     for count,pwd in usermessage.items():
         user=User(count,pwd)
         if user.login():
@@ -134,4 +141,3 @@ if __name__ == '__main__':
         user.join()
     print('author:qipaqiu\nfinishing in 5 seconds ')
     time.sleep(5)
-
