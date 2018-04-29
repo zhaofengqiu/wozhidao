@@ -73,7 +73,7 @@ class User():
         print(message)
 
 
-    def dianzna(self,newsId, action):
+    def dianzna(self,newsId, action):#点赞，其中action有两种选择‘d'是点赞，’p'是取消点赞。
         actions = {"d": '1', "p": '0'}
         processheaders['baseParams'] = self.baseParams
         processheaders['cid'] = self.cid
@@ -85,7 +85,7 @@ class User():
         else:
             print('%s文章，%s取消点赞成功' % (newsId, self.nickName))
 
-    def postcomment(self, newsId, comment):
+    def postcomment(self, newsId, comment):#发送评论，其中comment是需要发送的评论内容
         processheaders['baseParams'] = self.baseParams
         processheaders['cid'] = self.cid
 
@@ -138,7 +138,7 @@ def getNewdetail(newId,user):
     r=requests.get(newUrl,headers=processheaders)
     return r.text
 
-def getcomment(newId):
+def getcomment(newId):#获取到一篇文章下所有的评论
     commentlist=[]
     cnt=1
     while True:
