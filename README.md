@@ -3,7 +3,8 @@
 User类有两个方法分别是登录和退出方法。还有一些属性：cid指的是序列号这个是通过序列号的生成规则，通过random函数自动生成。
 user指的是这个实例的名字，password是将名码通过MD5加密获取到的  
 ## function introduce:
-其中最主要的是获取到token这个，为什么因为这个app是将token放到headers里面去判断是哪个用户  我在这里写了几个函数
+其中最主要的是获取到token这个，为什么因为这个app是将token放到headers里面去判断是哪个用户  
+我在这里写了几个函数
 1. getAlluser()是获取到excel里面的用户名和密码，本来是想用数据库的但是一般人不会用数据库，反而是excel用的多一点。
 2. getRecodes()是获取到这个用户的积分是多少
 3. getNews(sort,page)是获取到一面的新闻大标题，其中sort是分类，page是第几面。
