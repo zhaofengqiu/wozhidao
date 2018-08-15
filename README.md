@@ -1,7 +1,8 @@
 # wozhidao
+## 简单介绍:
 User类有两个方法分别是登录和退出方法。还有一些属性：cid指的是序列号这个是通过序列号的生成规则，通过random函数自动生成。
 user指的是这个实例的名字，password是将名码通过MD5加密获取到的
-
+## function introduce:
 其中最主要的是获取到token这个，为什么因为这个app是将token放到headers里面去判断是哪个用户
 我在这里写了几个函数
 1. getAlluser()是获取到excel里面的用户名和密码，本来是想用数据库的但是一般人不会用数据库，反而是excel用的多一点。
@@ -14,7 +15,7 @@ user指的是这个实例的名字，password是将名码通过MD5加密获取�
 这里要注意的是二点：
 1. 头文件里面如果有'application/json'，那么一点要把表单转换成json格式再传输，这里可以看出json格式和字典格式是不一样的。
 2. 如果是多进程打包成exe文件的话，if __name__=='__main__'的下面一点要加上multiprocessing.freeze_support()；
-
+## increase: 
 现在以及升级到了2.0版本呢。其中增加了一些功能，点赞功能。这个有什么地方要学习的呢？就是http里面的post不一定要有东西传过去，
 
 - [x] 点赞功能就是post了一次，其中比较新颖的是就是这个。
