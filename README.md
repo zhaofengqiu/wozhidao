@@ -12,6 +12,7 @@ user指的是这个实例的名字，password是将名码通过MD5加密获取�
 5. process(user,sum)这个就是处理一个用户登录到访问新闻结束到退出的过程。
 
 这里我采用的是一个用户开辟一个进程，因为用户是知道有几个的所以没必要开辟进程池。
+## arttention
 这里要注意的是二点：
 1. 头文件里面如果有'application/json'，那么一点要把表单转换成json格式再传输，这里可以看出json格式和字典格式是不一样的。
 2. 如果是多进程打包成exe文件的话，if __name__=='__main__'的下面一点要加上multiprocessing.freeze_support()；
