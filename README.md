@@ -15,7 +15,7 @@ user指的是这个实例的名字，password是将名码通过MD5加密获取�
 1、头文件里面如果有'application/json'，那么一点要把表单转换成json格式再传输，这里可以看出json格式和字典格式是不一样的。
 2、如果是多进程打包成exe文件的话，if __name__=='__main__'的下面一点要加上multiprocessing.freeze_support()；
 
-
+(baidu)[https://www.baidu.com)
 现在以及升级到了2.0版本呢。其中增加了一些功能，点赞功能。这个有什么地方要学习的呢？就是http里面的post不一定要有东西传过去，
 
 1】点赞功能就是post了一次，其中比较新颖的是就是这个。
