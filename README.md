@@ -1,4 +1,4 @@
-# wozhidao
+### wozhidao
 User类有两个方法分别是登录和退出方法。还有一些属性：cid指的是序列号这个是通过序列号的生成规则，通过random函数自动生成。
 user指的是这个实例的名字，password是将名码通过MD5加密获取到的
 
