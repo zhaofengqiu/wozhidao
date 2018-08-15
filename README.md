@@ -12,12 +12,11 @@ user指的是这个实例的名字，password是将名码通过MD5加密获取�
 
 这里我采用的是一个用户开辟一个进程，因为用户是知道有几个的所以没必要开辟进程池。
 这里要注意的是二点：
-1、头文件里面如果有'application/json'，那么一点要把表单转换成json格式再传输，这里可以看出json格式和字典格式是不一样的。
-2、如果是多进程打包成exe文件的话，if __name__=='__main__'的下面一点要加上multiprocessing.freeze_support()；
+1. 头文件里面如果有'application/json'，那么一点要把表单转换成json格式再传输，这里可以看出json格式和字典格式是不一样的。
+2. 如果是多进程打包成exe文件的话，if __name__=='__main__'的下面一点要加上multiprocessing.freeze_support()；
 
-[简书](http://www.jianshu.com)
 现在以及升级到了2.0版本呢。其中增加了一些功能，点赞功能。这个有什么地方要学习的呢？就是http里面的post不一定要有东西传过去，
 
-1】点赞功能就是post了一次，其中比较新颖的是就是这个。
-2】发送评论这里，其实比较新颖的是json格式和字典格式是不同的，在'Content-Type'= 'application/json'其中就必须先将字典dump成json才能发送表单。
-3】获取评论这里是通过一次while和cnt来控制获取全部的评论。
+1.[x] 点赞功能就是post了一次，其中比较新颖的是就是这个。
+2.[x] 发送评论这里，其实比较新颖的是json格式和字典格式是不同的，在'Content-Type'= 'application/json'其中就必须先将字典dump成json才能发送表单。
+3.[x] 获取评论这里是通过一次while和cnt来控制获取全部的评论。
